@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <button class="abrirModal-js" type="button">Abrir modal</button>
+
+  <div class="modal">
+    <header>
+      <h3 class="titulo-modal">Modal aberto</h3>
+      <button class="fecharModal-js" type="button">Fechar</button>
+    </header>
+    <p class="paragrafo-modal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nam, nihil optio tenetur a aliquam quaerat dolorum minima sapiente totam vel ad iusto expedita voluptas consequuntur earum, aliquid consectetur soluta!</p>
+  </div>
+  
+  <script>
+    const modalAberto = document.querySelector(".abrirModal-js")
+    const modalFechado = document.querySelector('.fecharModal-js')
+
+    const modal = document.querySelector('.modal')
+    const body = document.querySelector('body')
+
+    function abrirModal(){
+      modal.classList.add('ativo')
+      body.classList.add('background')
+    }
+
+    function fecharModal(){
+      modal.classList.remove('ativo')
+      body.classList.remove('background')
+    }
+
+    modalAberto.addEventListener('click', abrirModal)
+    modalFechado.addEventListener('click', fecharModal)
+  </script>
+</body>
+</html>
